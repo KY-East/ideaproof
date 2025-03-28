@@ -1,0 +1,138 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+你是一个web3项目的全栈开发大师，本项目主要设计语言为英文
+
+cursor_rules_ideaproof_v2 = """
+# Cursor Project Rules for 'IdeaProof' — Blockchain-based Idea Timestamp System
+
+# 🧠 项目简介
+project:
+  name: IdeaProof
+  purpose: On-chain timestamping system for AI-era idea verification
+  network: Solana
+  deployment: Devnet → Mainnet
+  mvp_focus: Hash + Timestamp + Wallet identity storage
+
+# 🔧 技术栈
+stack:
+  frontend: Next.js (TypeScript)
+  blockchain: Solana
+  smart_contract: Anchor (Rust)
+  wallet_support: Solana Wallet Adapter (Phantom, Solflare, Backpack, Ledger, Glow, Torus)
+  hash_algorithm: SHA-256 (browser-native)
+  UI_framework: Tailwind CSS (recommended)
+
+# 📁 文件结构规范
+structure:
+  contracts: /programs/ideaproof
+  frontend: /src
+  assets: /public/assets
+  constants: /src/constants
+  styles: /src/styles
+  pages: /src/pages
+  utils: /src/utils
+  components: /src/components
+
+# 💡 功能与模块约定
+features:
+  record_hash:
+    method: front-end hash → on-chain store
+    format: string (64 hex characters)
+    source: user input (idea)
+  wallet_connection:
+    provider: Solana Wallet Adapter
+    required: true
+    supported_wallets:
+      - Phantom
+      - Solflare
+      - Backpack
+      - Glow
+      - Ledger
+      - Torus
+  timestamp_source: on-chain `Clock`
+
+# 🔐 智能合约规范
+anchor:
+  program_name: ideaproof
+  entrypoint: record_idea
+  account_structure:
+    - idea_hash: string
+    - submitter: Pubkey
+    - timestamp: i64
+  validation:
+    - max_idea_hash_length: 64
+    - must_be_signed: true
+    - user_can_query_by_hash_or_pubkey: true
+
+# 🧪 开发规则
+rules:
+  use_named_functions_or_hooks: true
+  avoid_anonymous_fns: true
+  comment_all TODOs: true
+  enforce_typescript: true
+  no_bare_fetch: wrap in helpers
+  magic_numbers_disallowed: true
+  constants_in: /src/constants
+  utils_for_repeated_logic: true
+  file_size_warning_threshold_kb: 250
+
+# 🌐 路由与路径规范
+routing:
+  use_relative_or_root_paths: true
+  prohibit_full_urls: true
+  dev_basePath: /
+  prod_basePath: /ideaproof
+  vite_base: conditional by NODE_ENV
+
+# 🎨 UI/UX 风格
+design:
+  style: Minimalist Web3
+  colors:
+    primary: "#10b981"
+    background: "#0f172a"
+    font: "Inter, Roboto, sans-serif"
+  interaction_feedback_required: true
+  responsive_required: true
+  error_states:
+    - wallet_disconnected
+    - tx_failure
+    - hash_empty
+    - idea_already_recorded
+
+# 🌍 国际化（未来版本）
+i18n:
+  enabled: false
+  plan_for: en, zh, ja, ko
+  module: next-i18next (suggested)
+  string_access: via t('key')
+
+# 🚫 禁止项
+prohibited:
+  unverified_dependencies: true
+  full rewrite of file tree: unless proposal documented
+  duplicated business logic: extract to utils
+  hardcoded wallet addresses or keys: strictly forbidden
+  UI without mobile adaptation: forbidden
+  debug code in production commit: forbidden
+
+# ✅ PR 检查清单
+pr_checklist:
+  - Contract/API 变动已记录
+  - 常量抽出，无硬编码
+  - UI 与交互反馈完整
+  - 多钱包连接测试通过
+  - 错误状态覆盖完整
+  - 没有遗留调试代码
+  - 所有提交符合 DRY 原则
+
+"""
+
+# 保存为 .cursor/rules 文件
+cursor_rules_v2_path = "/mnt/data/.cursor_rules_ideaproof.yaml"
+with open(cursor_rules_v2_path, "w") as f:
+    f.write(cursor_rules_ideaproof_v2)
+
+cursor_rules_v2_path

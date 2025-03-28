@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "IdeaProof - Blockchain Idea Timestamping",
+    "description": "Secure your creative ideas with blockchain timestamps"
+  },
+  "nav": {
+    "home": "Home",
+    "submit": "Submit Idea",
+    "verify": "Verify Idea",
+    "profile": "My Ideas",
+    "about": "About"
+  },
+  "buttons": {
+    "connect": "Connect Wallet",
+    "disconnect": "Disconnect",
+    "submit": "Submit",
+    "verify": "Verify",
+    "copy": "Copy",
+    "upload": "Upload File",
+    "calculate": "Calculate Hash"
+  },
+  "form": {
+    "idea": "Your Idea",
+    "title": "Title (Optional)",
+    "description": "Description (Optional)",
+    "hash": "SHA-256 Hash",
+    "fileType": "File Type",
+    "dragDrop": "Drag & drop files here or click to browse"
+  },
+  "types": {
+    "text": "Text",
+    "image": "Image",
+    "video": "Video",
+    "audio": "Audio",
+    "code": "Code",
+    "other": "Other"
+  },
+  "status": {
+    "calculating": "Calculating hash...",
+    "submitting": "Submitting to blockchain...",
+    "success": "Successfully recorded!",
+    "error": "Error occurred",
+    "verifying": "Verifying proof...",
+    "verified": "Proof verified!",
+    "notFound": "Proof not found"
+  },
+  "errors": {
+    "invalidHash": "Invalid hash format",
+    "emptyIdea": "Idea content cannot be empty",
+    "walletNotConnected": "Wallet not connected",
+    "networkError": "Network error, please try again",
+    "fileTooLarge": "File too large"
+  }
+} 

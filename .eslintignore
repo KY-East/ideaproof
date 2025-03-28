@@ -1,0 +1,19 @@
+# 忽略所有Markdown文件
+*.md
+
+# 构建输出目录
+.next/
+out/
+build/
+dist/
+
+# 依赖
+node_modules/
+
+# 杂项配置
+*.config.js
+next-env.d.ts
+
+# 其他不需要检查的文件
+*.css
+
